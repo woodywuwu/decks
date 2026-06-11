@@ -1,0 +1,16 @@
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+node_modules/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.tmp/
+*.tmp
+*.log
+.cache/

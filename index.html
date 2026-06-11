@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youngs Group · 网页 PPT 集合</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0b;
+    --ink-rgb: 10, 10, 11;
+    --paper: #f1efea;
+    --paper-rgb: 241, 239, 234;
+    --paper-tint: #e8e5de;
+    --ink-tint: #18181a;
+    --accent: #c8553d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12vh 6vw 12vh;
+  }
+
+  /* Top chrome */
+  .chrome {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(var(--ink-rgb), 0.55);
+    padding-bottom: 2.4vh;
+    border-bottom: 1px solid rgba(var(--ink-rgb), 0.15);
+    margin-bottom: 8vh;
+  }
+
+  /* Header */
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(var(--ink-rgb), 0.55);
+    margin-bottom: 2.4vh;
+  }
+
+  h1.hero {
+    font-family: 'Noto Serif SC', 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 3vh;
+  }
+
+  h1.hero em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .lead {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(var(--ink-rgb), 0.75);
+    max-width: 56ch;
+    margin-bottom: 9vh;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 1.6em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(var(--ink-rgb), 0.55);
+    margin-bottom: 9vh;
+  }
+
+  .meta-row span.dot { color: var(--accent); }
+
+  /* Section heading */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(var(--ink-rgb), 0.5);
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(var(--ink-rgb), 0.15);
+  }
+
+  /* Card grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 4vh 3vw;
+    margin-bottom: 10vh;
+  }
+
+  a.card {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 3.2vh 2.4vw;
+    background: rgba(var(--ink-rgb), 0.03);
+    border: 1px solid rgba(var(--ink-rgb), 0.08);
+    border-left: 3px solid var(--accent);
+    transition: all 0.32s cubic-bezier(0.2, 0.6, 0.2, 1);
+    position: relative;
+  }
+
+  a.card:hover {
+    background: rgba(var(--ink-rgb), 0.06);
+    border-left-width: 6px;
+    transform: translateX(2px);
+  }
+
+  a.card .card-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(var(--ink-rgb), 0.45);
+    margin-bottom: 1.2vh;
+  }
+
+  a.card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 1.6vh;
+  }
+
+  a.card .desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(var(--ink-rgb), 0.65);
+    margin-bottom: 2vh;
+  }
+
+  a.card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    margin-bottom: 2vh;
+  }
+
+  a.card .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3em 0.7em;
+    border: 1px solid rgba(var(--ink-rgb), 0.18);
+    color: rgba(var(--ink-rgb), 0.6);
+  }
+
+  a.card .card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(var(--ink-rgb), 0.4);
+    padding-top: 1.6vh;
+    border-top: 1px solid rgba(var(--ink-rgb), 0.1);
+  }
+
+  a.card .arrow {
+    color: var(--accent);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  /* Footer */
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3vh;
+    border-top: 1px solid rgba(var(--ink-rgb), 0.15);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(var(--ink-rgb), 0.5);
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .container { padding: 8vh 6vw; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="chrome">
+    <div>Youngs Group · Web Decks</div>
+    <div>Vol.01 · 2026.06</div>
+  </div>
+
+  <div class="kicker">网页 PPT 集合 · Web Decks Index</div>
+  <h1 class="hero">每一份<br>都是<em>现场级</em>叙事。</h1>
+  <p class="lead">
+    单 HTML 文件，无外部依赖，键盘 ← → 翻页。杂志风 / 瑞士风两套模板，所有内容按"内部培训 / 客户提案 / 行业洞察"分类。
+  </p>
+  <div class="meta-row">
+    <span><span class="dot">●</span> 1 份已发布</span>
+    <span>·</span>
+    <span>Hosted on GitHub Pages</span>
+    <span>·</span>
+    <span>Youngs Group 创意群</span>
+  </div>
+
+  <div class="section-label">全部 Decks</div>
+  <div class="grid">
+
+    <a class="card" href="creative-process.html">
+      <div class="card-kicker">Vol.01 · 内部培训</div>
+      <h3>创意团队前期合作<br>工作进度模板</h3>
+      <p class="desc">10 页 · 杂志风。覆盖策划 / 平面 / 三维三个岗位的产出颗粒度标准与 9 条质量红线。用于创意团队内部培训第一场。</p>
+      <div class="tags">
+        <span class="tag">杂志风</span>
+        <span class="tag">10 页</span>
+        <span class="tag">内部培训</span>
+        <span class="tag">2026.06.11</span>
+      </div>
+      <div class="card-meta">
+        <span>creative-process.html</span>
+        <span class="arrow">→ 打开</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="foot">
+    <div>Hosted by GitHub Pages · woodywuwu/decks</div>
+    <div>— 谢 谢 —</div>
+  </div>
+</div>
+</body>
+</html>
